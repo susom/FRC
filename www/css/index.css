@@ -1,0 +1,597 @@
+
+body{
+    background:#C6EAF4 url(../img/blue_waters.jpg) 45% 0% no-repeat;
+    background-size:330%;
+    text-align:center;
+    font-family:Helvetica;
+    color:#1580AE;
+    min-height:500px;
+    min-width:100%;
+    margin:0;
+    padding:0 0 125px;
+    position:relative;
+}
+
+body.seashell{
+    background:#C6EAF4 url(../img/beach_seashell.jpg) 45% 0% no-repeat;
+    background-size:330%;
+}
+
+body.stillblue {
+    background:#C6EAF4 url(../img/calm_blue.jpg) 45% 0% no-repeat;
+    background-size:330%;
+}
+
+body.carribean {
+    background:#C6EAF4 url(../img/caribbean.gif) 45% 0% no-repeat;
+    background-size:330%;
+}
+
+body.norway{
+     background:#C6EAF4 url(../img/norway.gif) 15% 0% no-repeat;
+}
+
+body.night{
+    background: #C6EAF4 url(../img/nightwater2.gif) 50% 20% no-repeat;
+    background-size: 400%;
+}
+
+body.beach{
+    background: #C6EAF4 url(../img/tropicalbeach.gif) 90% 0% no-repeat;
+    background-size: 220%;
+}
+
+body.shade:before {
+    content: "";
+    width: 100%;
+    height: calc(100% + 100px);
+    background: #333;
+    opacity: .8;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.panel{
+    position:relative;
+    min-height:100%;
+    min-width:100%;
+    opacity   : 0;
+    transition: opacity .75s ease-in-out;
+    display   : none;
+}
+.panel.loaded  {
+    opacity   : 1;
+}
+
+#bgs{
+    position:fixed;
+    bottom:-67px;
+    text-align:center;
+    width:100%;
+    padding:10px 0;
+    border-top:1px solid #666;
+    transition: bottom .25s ease-in-out;
+}
+#bgs.open{
+    bottom:0;
+}
+#bgs:after{
+    content:"";
+    z-index:-1;
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    opacity:.6;
+    background:#ccc;
+}
+#bgs .handle{
+    position: absolute;
+    top: -31px;
+    left: 50%;
+    margin-left: -85px;
+    width: 170px;
+    content: "";
+    border: 1px solid #666;
+    border-radius:5px 5px 0 0;
+    border-bottom:none;
+    height: 30px;
+    display: inline-block;
+    line-height: 30px;
+    text-decoration:none;
+    color:#333;
+}
+#bgs .handle:after{
+    content:"";
+    z-index:-1;
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    opacity:.6;
+    background:#ccc;
+}
+#bgs .bg{
+    display:inline-block;
+    width:40px;
+    height:40px; 
+    border:1px solid #C6EAF4;
+    margin:0 5px;
+}
+a.seashell{
+    background:#C6EAF4 url(../img/beach_seashell.jpg) 0% 0% no-repeat;
+    background-size:cover;
+}
+a.bluewaters{
+    background:#C6EAF4 url(../img/blue_waters.jpg) 0% 0% no-repeat;
+    background-size:cover;
+}
+a.stillblue{
+    background:#C6EAF4 url(../img/calm_blue.jpg) 0% 0% no-repeat;
+    background-size:cover;
+}
+a.carribean{
+    background:#C6EAF4 url(../img/caribbean.gif) 0% 0% no-repeat;
+    background-size:cover;
+}
+a.night{
+    background: #C6EAF4 url(../img/nightwater2.gif) 0% 0% no-repeat;
+    background-size:cover;
+}
+a.norway{
+    background:#C6EAF4 url(../img/norway.gif) 0% 0% no-repeat;
+    background-size:cover;
+}
+a.beach{
+    background: #C6EAF4 url(../img/tropicalbeach.gif) 0% 0% no-repeat;
+    background-size:cover;
+}
+
+hgroup{
+    margin: 0;
+    padding: 20px 0 5px;
+    position: relative;
+    font-size: 88%;
+    overflow:hidden;
+}
+hgroup:after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: aliceblue;
+    position: absolute;
+    z-index: -1;
+    opacity: .8;
+    top: 0;
+    left: 0;
+}
+h1{
+    margin:0 auto; 
+    text-transform:uppercase;
+}
+h2{
+    color: #169687;
+    margin: 0;
+    font-weight: normal;
+}
+#jp_container_1 {
+    margin:30px auto;
+}
+
+.output {
+    position:fixed;
+    bottom:10px;
+    left:50%;
+    width:300px;
+    height:150px;
+    margin-left:-150px;
+}
+.output h4{
+     margin:5px auto;
+     color:#fff;
+}
+#output {
+    width:100%;
+    height:80px;
+    vertical-align:top;
+    padding:0; 
+}
+
+
+aside{
+    margin-top:20px;
+}
+.btn {
+    display:inline-block;
+    padding:5px 8px;
+    border:1px solid #666;
+    border-radius:3px;
+    background:#3EA998;
+    box-shadow:1px 1px 3px #3A2A45;
+    font-family:arial;
+    font-size:14px;
+    color:#fff;
+    text-decoration:none;
+    text-shadow:initial;
+    opacity:.8;
+}
+
+.btn.logit {
+    display:block;
+    width:90%;
+    margin:20px auto 0;
+    font-size: 110%;
+}
+
+.nav{
+    display: inline-block;
+    margin: 0 auto;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 270%;
+    color: #333;
+}
+
+#settings h1, #notifications h1{
+    text-align:left;
+    margin:0 0 0 15px;
+    float:left;
+}
+
+.nav{
+    vertical-align:middle;
+    display: inline-block;
+    margin: 3px 8px 0 ;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 300%;
+    color: #efefef;
+    line-height: 80%;
+    text-shadow:0 0 5px #333;
+}
+.nav span {
+    display:block;
+    font-size:35%;
+    color:#333;
+    text-shadow:none;
+    text-shadow:0 0 2px #fff;
+}
+.nav.notif{
+  font-size:210%;
+  line-height:120%;
+  display:none;
+}
+
+.nav.notif.show{
+    display:inline-block;
+}
+
+#notifications .nav, 
+#settings .nav {
+    margin:3px 15px 0 0;
+}
+
+#notifications hgroup, 
+#settings hgroup {
+    text-align:right;
+}
+#notifications .actions, 
+#settings .actions {
+  border-top: 1px solid #6FCDF2;
+  border-left: 1px solid #6FCDF2;
+  border-right: 1px solid #6FCDF2;
+  border-bottom: 1px solid #6FCDF2;
+  border-radius:5px;
+  width: 80%;
+  padding: 30px 20px 0; 
+  position:relative;
+  margin:30px auto;
+}
+
+#notifications .actions:after,
+#settings .actions:after{
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0; left:0;
+  content:"";
+  background-color: #C6EAF4; 
+  opacity:.4;
+  z-index:-1;
+}
+
+#notifications .btn,
+#settings .btn {
+    display: block;
+    height: 60px;
+    margin-bottom: 30px;
+    font-size: 24px;
+    line-height: 60px;
+}
+
+.btn.syncing {
+    background:#73BAD8 url(../img/ajax-loader.gif) 3% 50% no-repeat;
+}
+.btn.syncing span:after {
+    content:"ing";
+}
+
+.actions ol{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+.actions li{
+    position:relative;
+    margin-bottom:30px;
+    border-radius:5px;
+    text-align:left;
+    overflow:hidden;
+    color:#333;
+    padding: 10px;
+}
+
+.actions li:after{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    background:#fff; 
+    opacity:.8;
+    z-index:-1;
+    padding:10px;
+}
+
+.actions li h4{
+    margin:0 0 10px;
+    padding:0;
+}
+
+.reminder i {
+    font-style:normal;
+    font-weight:bold;
+    font-size: 30px;
+}
+
+.addedit{
+    position:absolute;
+    width:50px;
+    right:0;
+    top:0;
+    height:100%;
+    border-left:1px solid #ccc;
+    text-decoration:none;
+    color:#333;
+    font-size:180%;
+    text-align:center;
+}
+
+.reminder .addedit i,
+.reminder .addedit em{
+    margin: 0 auto;
+    font-style: normal;
+    line-height: 70px;
+    font-weight:normal;
+}
+
+.reminder.set i,
+.reminder em {
+    display:inline-block;
+}
+
+.reminder i,
+.reminder.set em {
+    display:none;
+}
+
+#setup_alert{
+    display:none;
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    margin-left: -150px;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #ccc;
+    z-index:9;
+}
+
+#setup_alert select{
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 20px;
+    background: aliceblue;
+}
+#setup_alert input[type='submit']{
+    display: inline-block;
+    margin: 20px auto;
+    padding: 8px 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    background: #3EA998;
+    color: #fff;
+}
+
+.closeform{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #Ccc;
+    border-radius: 3px;
+    text-align: Center;
+    text-decoration: none;
+    color: #666;
+    line-height: 170%;
+    font-weight: bold;
+    font-size: 88%;
+}
+
+#flower{
+    display:none;
+    z-index:5;
+    position: absolute;
+    left: 50%;
+    margin-left: -160px;
+    top: 50%;
+    margin-top: 0px;
+    opacity:0;
+    transition: opacity .5s ease-in-out;
+    width:320px;
+    height:320px;
+}
+
+#flower{
+    margin-top:-360px;
+    position:relative; 
+}
+.flower{
+    width:284px;
+    height:160px;
+    margin:0 auto;
+    background:url(../img/open_flower.gif) no-repeat; 
+    background-size:contain;
+    opacity:0;
+    transition: opacity 1s ease-in-out;
+    border-radius:5px;
+}
+.flower.show{
+    opacity:1; 
+}
+
+#flower.show{
+    opacity:1;
+}
+
+
+#flower h1,
+#flower h2{
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+    text-transform: capitalize;
+    margin: 100px 0 0;
+    padding:  0;
+    font-size: 120%;
+    font-family: fantasy;
+    color: #fff;
+    text-shadow: 0 0 3px #333;
+}
+
+
+#flower h1{
+    margin-top:20px;
+}
+#flower h2 {
+    font-size:200%;
+}
+#flower h1.show,
+#flower h2.show{
+    opacity: 1;
+}
+
+#flower img{
+    height:190px;
+    box-shadow: 0 0 3px #ccc;
+    margin: 0;
+    padding: 0;
+    height: 190px;
+    border-radius: 5px;
+}
+
+
+.deleteall {
+    background:red;
+}
+
+
+
+#main .login {
+    display:none;
+}
+
+.login {
+    margin-top:30px;
+}
+
+.login form{
+  font-size: 16px;
+  font-family: Verdana, Arial, sans-serif;
+  line-height: 1.6;
+  color: #115471;
+  border-top: 1px solid #6FCDF2;
+  border-left: 1px solid #6FCDF2;
+  border-right: 1px solid #6FCDF2;
+  border-bottom: 1px solid #6FCDF2;
+  border-radius:5px;
+
+  width: 80%;
+  padding: 20px; 
+  position:Relative;
+
+  margin:0 auto;
+}
+
+.login form:after{
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0; left:0;
+  content:"";
+  background-color: #C6EAF4; 
+  opacity:.4;
+  z-index:-1;
+}
+
+.login h3{
+    color:#115471;
+    font-weight:normal;
+    font-size:130%;
+    line-height:130%;
+    margin:0 0 20px; padding:0;
+
+}
+.login label{
+    display:block; 
+    margin-bottom:5px;
+    padding:0;
+}
+.login label span{
+    display:inline-block;
+    width:110px;
+    text-align:right;
+    vertical-align: middle;
+    margin:0;
+}
+.login label input {
+    display:inline-block;
+    font-size:110%;
+    width:60px;
+    vertical-align: middle;
+}
+.login button {
+    display:block;
+    width:90%;
+    margin:20px auto 0;
+    font-size: 150%;
+}
+
+#alias {
+    margin:0; 
+    padding:0;
+    text-align:left;
+    font-weight:normal;
+    position:absolute;
+}
+
+#alias i{
+    font-style:normal;
+}

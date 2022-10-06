@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+<head>
+<!--
+Customize this policy to fit your own app's needs. For more guidance, see:
+    https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+Some notes:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+-->
+<!-- <meta http-equiv="Contpent-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
+<meta name="format-detection" content="telephone=no">
+<meta name="msapplication-tap-highlight" content="no">
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+<link type="text/css" href="skin/pink.flag/css/jplayer.pink.flag.css" rel="stylesheet" />
+<link type="text/css" href="css/index.css" rel="stylesheet" >
+<title>Mind-Body Medicine</title>
+</head>
+<body>
+<div class="app">
+  <div id="main" class="panel">
+    <hgroup>
+      <h1>Relaxation Resource</h1>
+      <h2>Binaural Technology</h2>
+    </hgroup>
+    
+    <div class='player'>
+      <div id="jquery_jplayer_1" class="jp-jplayer"></div>
+      <div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
+        <div class="jp-type-single">
+          <h5 id='alias'>Hi, <i></i></h5>
+          <div class="jp-gui jp-interface">
+            <!-- <div class="jp-volume-controls">
+              <button class="jp-mute" role="button" tabindex="0">mute</button>
+              <button class="jp-volume-max" role="button" tabindex="0">max volume</button>
+              <div class="jp-volume-bar">
+                <div class="jp-volume-bar-value"></div>
+              </div>
+            </div> -->
+            <div class="jp-controls-holder">
+              <div class="jp-controls">
+                <button class="jp-play" role="button" tabindex="0"></button>
+                <button class="jp-stop" role="button" tabindex="0">Restart</button>
+              </div>
+              <div class="jp-progress">
+                <div class="jp-seek-bar">
+                  <div class="jp-play-bar"></div>
+                </div>
+              </div>
+              <div class="jp-current-time" role="timer" aria-label="time">&nbsp;</div>
+              <div class="jp-duration" role="timer" aria-label="duration">&nbsp;</div>
+            </div>
+          </div>
+          <div class="jp-details">
+            <div class="jp-title" aria-label="title">&nbsp;</div>
+          </div>
+          <div class="jp-no-solution">
+            <span>Update Required</span>
+            To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+          </div>
+          <aside>
+            <a href="#" class="btn logit">Finish & <span>Upload</span> Listen</a>
+          </aside>
+        </div>
+      </div>
+      <aside>
+          <a href="#" data-next="settings" class="nav settings">&#9881; <span>Settings</span></a>
+          <a href="#" data-next="notifications" class="nav notif">&#128276; <span>Reminders</span></a>
+      </aside>
+    </div>
+
+    <div class="login">
+      <form id='login'>
+        <h3>Input the participant id and passcode you were provided to activate this app.</h3>
+        <label><span>Participant Id</span> <input type="text" name='participant_id' placeholder='Pxxx'></label>
+        <label><span>Passcode</span> <input type="tel" name='passcode' placeholder='1234'></label>
+        <button class='btn'>Start App</button>
+      </form>
+    </div>
+
+    <aside id="bgs">
+      <a href="#" class="handle">Chose Background</a>
+      <a href="#" data-bg="bluewaters" class="bg bluewaters"></a>
+      <a href="#" data-bg="seashell" class="bg seashell"></a>
+      <a href="#" data-bg="stillblue" class="bg stillblue"></a>
+      <a href="#" data-bg="beach" class="bg beach"></a>
+      <a href="#" data-bg="carribean" class="bg carribean"></a>
+      <a href="#" data-bg="norway" class="bg norway"></a>
+      <!-- <a href="#" data-bg="night" class="bg night"></a> -->
+    </aside>
+  </div>
+
+  <div id="settings" class="panel">
+    <hgroup>
+      <h1>Settings</h1>
+    </hgroup>
+    <aside class="actions">
+        <a href="#" class="btn upload"><span>Sync</span> Data (<b>0</b>)</a>
+        <a href="#" class="btn goals">Daily Listening Goal (<b>0</b>)</a>
+        <a href="#" class="btn deleteall">Clear All Data</a>
+        <!-- <a href="#" class="btn editid">Edit ID</a> -->
+    </aside>
+
+    <aside>
+        <a href="#" class="nav notif" data-next="notifications" >&#128276; <span>Reminders</span></a>
+        <a href="#" class="nav home" data-next="main">&#8962; <span>Home</span></a>
+    </aside>
+  </div>
+
+  <div id="notifications" class="panel">
+    <hgroup>
+      <h1>Daily Reminders</h1>
+    </hgroup>
+    <aside>
+      <ol>
+        <li><h4>Reminder #1:</h4>
+            <div class="reminder" data-reminder=1>
+              <i></i>
+              <em>No reminder set yet</em>
+              <a href="#" data-reminder=1 class="addedit"><i>&#9998;</i><em>&#43;</em></a>
+            </div>
+        </li>
+        <li><h4>Reminder #2:</h4>
+            <div class="reminder" data-reminder=2>
+              <i></i>
+              <em>No reminder set yet</em>
+              <a href="#" data-reminder=2 class="addedit"><i>&#9998;</i><em>&#43;</em></a>
+            </div>
+        </li>
+        <li><h4>Reminder #3:</h4>
+            <div class="reminder" data-reminder=3>
+              <i></i>
+              <em>No reminder set yet</em>
+              <a href="#" data-reminder=3 class="addedit"><i>&#9998;</i><em>&#43;</em></a>
+            </div>
+        </li>
+      </ol>
+      <aside>
+        <a href="#" data-next="settings" class="nav settings">&#9881; <span>Settings</span></a>
+        <a href="#" data-next="main" class="nav home" >&#8962; <span>Home</span></a>
+      </aside>
+
+      <form id='setup_alert'>
+        <a href="#" class="closeform">X</a>
+        <h3>Set Reminder #<span></span> Time</h3>
+        <select name='hour' id='hour'>
+          <option value='01'>01</option>
+          <option value='02'>02</option>
+          <option value='03'>03</option>
+          <option value='04'>04</option>
+          <option value='05'>05</option>
+          <option value='06'>06</option>
+          <option value='07'>07</option>
+          <option value='08'>08</option>
+          <option value='09'>09</option>
+          <option value='10'>10</option>
+          <option value='11'>11</option>
+          <option value='12' selected>12</option>
+        </select>
+        <select name='min' id='min'>
+          <option value="00" selected>:00</option>
+          <option value="15">:15</option>
+          <option value="30">:30</option>
+          <option value="45">:45</option>
+        </select>
+        <select name='ampm' id='ampm'>
+          <option value='AM' selected>AM</option>
+          <option value='PM'>PM</option>
+        </select>
+        <div>
+          <input type="submit" name='action' value="Set"/>
+          <input type="submit" name='action' value="Delete"/>
+        </div>
+      </form>
+    </aside>
+  </div>
+  
+  <div id="flower">
+    <div class="flower"></div>
+    <h1>Congratulations for giving yourself the gift of relaxation</h1>
+    <h2>You've reached your daily goal!</h2>
+  </div> 
+</div>
+</body>
+<!-- <script src="http://10.34.248.158:8080/target/target-script-min.js#anonymous"></script> -->
+<!-- <script src="http://192.168.86.108:8080/target/target-script-min.js#anonymous"></script> -->
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.jplayer.min.js"></script>
+<script thpe="text/javascript" src="js/fastclick.js"></script>
+<script type="text/javascript" src="js/redcap_api.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    app.initialize();
+    $(function() {
+        FastClick.attach(document.body);
+    });
+});
+</script>
+</html>
